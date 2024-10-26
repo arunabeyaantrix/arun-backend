@@ -1,4 +1,12 @@
-### Install Packages###
+# Arun backend system
+
+## Setup
+
+### Prerequesites
+
+- Install Node
+
+### Install app
 
 ``` yarn install  ```
 
@@ -6,6 +14,6 @@
 
 ``` npx prisma generate ```
 
-### Run in development mode ###
+### Run in development mode
 
 ``` yarn dev ```
