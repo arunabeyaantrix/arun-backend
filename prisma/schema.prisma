@@ -14,18 +14,18 @@ datasource db {
 }
 
 model BodyPart {
-  id        String      @id @default(auto()) @map("_id") @db.ObjectId
-  name      String      @unique
-  Excercise Excercise[]
+  id       String     @id @default(auto()) @map("_id") @db.ObjectId
+  name     String     @unique
+  Exercise Exercise[]
 }
 
-model Excercise {
-  id               String   @id @default(auto()) @map("_id") @db.ObjectId
-  title            String
-  machineType      String
-  videoUrl         String
-  type             String
-  type_description String
-  bodyPartId       String   @db.ObjectId
-  bodyPart         BodyPart @relation(fields: [bodyPartId], references: [id])
+model Exercise {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  title           String
+  machineType     String
+  // videoUrl         String?
+  type            String   @default("normal")
+  typeDescription String?
+  bodyPartId      String   @db.ObjectId
+  bodyPart        BodyPart @relation(fields: [bodyPartId], references: [id])
 }

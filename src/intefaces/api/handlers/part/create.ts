@@ -17,7 +17,7 @@ export async function index ({body}: CreateRequest, reply: FastifyReply) {
     newPart = await prisma.$transaction(async(tx) => {
       const {name} = body
       const repository = new PartRepository(tx)
-      const either =await  useCase.excecute({repository, name})
+      const either =await  useCase.execute({repository, name})
 
       if(isLeft(either)){
         throw either.left

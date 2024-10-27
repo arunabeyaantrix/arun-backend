@@ -5,7 +5,7 @@ interface input  {
   repository: IPartRepository,
   name: string
 }
-export async function excecute ({
+export async function execute ({
   repository: repo,
   name
 }: input) {
